@@ -1,5 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { environment } from "src/environments/environment";
+import { Observable } from "rxjs";
+import { LaunchModel } from "../models/launch.model";
 
 @Injectable({
   providedIn: "root",
@@ -7,11 +10,7 @@ import { HttpClient } from "@angular/common/http";
 export class SpaceXService {
   constructor(private http: HttpClient) {}
 
-  getAllLaunches() {
-    this.http
-      .get("https://api.spaceXdata.com/v3/launches?limit=100")
-      .subscribe((data) => {
-        console.log(data);
-      });
+  getAllLaunches(): Observable<LaunchModel[]> {
+    return this.http.get<LaunchModel[]>(`${environment.spaceXServiceRoot}`);
   }
 }
