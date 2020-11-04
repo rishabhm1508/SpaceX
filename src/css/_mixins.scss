@@ -1,0 +1,7 @@
+@import "functions";
+
+@mixin year {
+  padding: rem-calc(8) rem-calc(12);
+  border: none;
+  border-radius: 8%;
+}

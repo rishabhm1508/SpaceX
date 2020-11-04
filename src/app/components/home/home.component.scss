@@ -1,5 +1,9 @@
 @import "variables";
 
 .container-background {
-    background-color: $container-background;
-}; 
+    background-color: $light-gray;
+};
+
+.header {
+    margin: 0;
+}

@@ -1,0 +1,35 @@
+@import "variables";
+@import "functions";
+@import "mixins";
+
+.year {
+  &-selected {
+    @include year;
+    background-color: lightgreen;
+  }
+  &-unselected {
+    @include year;
+    background-color: lightgreen;
+  }
+}
+
+.filter {
+  &-background {
+    background-color: $white;
+  }
+  &-header {
+    margin: 0px;
+  }
+}
+
+.year-label {
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+  &-content {
+    border-bottom: 1px solid $launch-label-border;
+    padding-right: rem-calc(12);
+    padding-left: rem-calc(12);
+  }
+}
