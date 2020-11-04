@@ -1,7 +1,15 @@
 @import "functions";
+@import "variables";
 
 @mixin year {
-  padding: rem-calc(8) rem-calc(12);
+  padding: rem-calc(4) rem-calc(12);
   border: none;
   border-radius: 8%;
+  outline: none;
+}
+
+@mixin filter-labels($pad-left, $pad-right) {
+  border-bottom: 1px solid $launch-label-border;
+  padding-right: rem-calc($pad-right);
+  padding-left: rem-calc($pad-left);
 }

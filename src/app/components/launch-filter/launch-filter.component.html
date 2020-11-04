@@ -7,10 +7,42 @@
       <label class="year-label-content">Launch Year</label>
     </div>
 
-    <div class="row">
-        <div class="col-d-12">
-           <button class="year-selected" type="button">2006</button>
-        </div>
+    <div class="year-btn-container">
+      <div class="col-d-6" *ngFor="let year of years; let index = index">
+        <button
+          [ngStyle]="{ float: index % 2 !== 0 ? 'right' : '' }"
+          class="year-selected"
+          type="button"
+        >
+          {{ year }}
+        </button>
+      </div>
+    </div>
+
+    <div class="col-d-12 year-label-container">
+      <label class="label-success-launch">Successful Launch</label>
+    </div>
+
+    <div class="year-btn-container">
+      <div class="col-d-12">
+        <button class="year-selected" type="button">True</button>
+        <button class="year-selected year-second-btn" type="button">
+          False
+        </button>
+      </div>
+    </div>
+
+    <div class="col-d-12 year-label-container">
+      <label class="label-success-launch">Successful Landing</label>
+    </div>
+
+    <div class="year-btn-container">
+      <div class="col-d-12">
+        <button class="year-selected" type="button">True</button>
+        <button class="year-selected year-second-btn" type="button">
+          False
+        </button>
+      </div>
     </div>
   </div>
 </div>
