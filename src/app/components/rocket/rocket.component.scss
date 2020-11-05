@@ -1,0 +1,39 @@
+@import "mixins";
+
+.rocket-card-background {
+  background-color: $white;
+  border-radius: 5%;
+  padding: rem-calc(12);
+}
+
+.image {
+  &-container {
+    background-color: $light-gray;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  &-details {
+    height: inherit;
+    width: 100%;
+  }
+}
+
+.rocket {
+  &-name {
+    color: $rocket-name-label;
+    font-weight: bolder;
+    margin: rem-calc(10) 0;
+  }
+  &-id {
+    &-label {
+        font-weight: bolder;
+    }
+    &-value {
+      color: $rocket-name-label;
+      & > ul {
+        margin: 4px 0;
+      }
+    }
+  }
+}

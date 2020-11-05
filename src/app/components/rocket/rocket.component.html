@@ -1,0 +1,51 @@
+<section class="rocket-card-background">
+  <div class="row">
+    <div class="image-container col-d-12">
+      <img
+        class="image-details"
+        src="{{launch.links.mission_patch}}"
+        alt="rocket_logo"
+      />
+    </div>
+    <div class="col-d-12">
+      <h3 class="rocket-name">{{launch.mission_name}} #{{launch.flight_number}}</h3>
+      <label>
+        <span class="rocket-id-label"> Mission Ids: </span>
+        <span class="rocket-id-value">
+          <ul>
+            <li *ngFor="let id of launch.mission_id">{{id}}</li>
+          </ul>
+        </span>
+      </label>
+    </div>
+
+    <div class="col-d-12">
+      <label>
+        <span class="rocket-id-label">Launch Year </span> :
+        <span class="rocket-id-value">{{launch.launch_year}} </span>
+      </label>
+    </div>
+
+    <div class="col-d-12">
+        <div class="row">
+            <div class="col-d-5">
+                <label class="rocket-id-label">Successful Launch </label> :
+            </div>
+            <div class="col-d-7">
+                <label class="rocket-id-value">{{launch.launch_success}} </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-d-12">
+        <div class="row">
+            <div class="col-d-5">
+                <label class="rocket-id-label">Successful Landing </label> :
+            </div>
+            <div class="col-d-7">
+                <label class="rocket-id-value">{{launch.tbd}} </label>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>

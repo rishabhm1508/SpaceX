@@ -1,43 +1,79 @@
 @import "mixins";
 
-.year {
-  &-selected {
-    @include year;
-    background-color: lightgreen;
+.year-btn-container {
+  padding: 0px rem-calc(10);
+  margin-bottom: 10%;
+}
+
+.d-flex {
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  &-unselected {
-    @include year;
-    background-color: lightgreen;
-  }
-  &-btn-container {
-    padding: 0px rem-calc(10);
-  }
-  &-second-btn {
-    float: right;
+  &-label {
+    display: flex;
+    justify-content: center;
   }
 }
 
 .filter {
   &-background {
     background-color: $white;
+    border-radius: 2%;
+    padding-bottom: 15%;
   }
   &-header {
     margin: 0px;
   }
 }
-
-.year-label {
-  &-container {
-    display: flex;
-    justify-content: center;
-  }
-  &-content {
-    @include filter-labels(28, 28);
+.label-padding {
+  @include filter-labels(28, 28);
+  &-success {
+    @include filter-labels(12, 12);
   }
 }
 
-.label {
-  &-success-launch {
-    @include filter-labels(12, 12);
-  }
+.btn-success-container {
+  padding: 0 rem-calc(17);
+  margin-bottom: 10%;
+}
+
+input[name="yearRadio"] {
+  display: none;
+}
+input[name="yearRadio"] + label {
+  @include year;
+  background-color: $not-selected-color;
+}
+
+input[name="yearRadio"]:checked + label {
+  @include year;
+  background-color: $selected-color;
+}
+
+input[name="successLaunch"] {
+  display: none;
+}
+input[name="successLaunch"] + label {
+  @include year;
+  background-color: $not-selected-color;
+}
+
+input[name="successLaunch"]:checked + label {
+  @include year;
+  background-color: $selected-color;
+}
+
+input[name="successLand"] {
+  display: none;
+}
+input[name="successLand"] + label {
+  @include year;
+  background-color: $not-selected-color;
+}
+
+input[name="successLand"]:checked + label {
+  @include year;
+  background-color: $selected-color;
 }

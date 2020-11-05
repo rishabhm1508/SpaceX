@@ -1,48 +1,50 @@
-<div class="filter-background">
-  <div class="row">
-    <div class="col-d-12">
-      <h2 class="filter-header">Filters</h2>
-    </div>
-    <div class="col-d-12 year-label-container">
-      <label class="year-label-content">Launch Year</label>
-    </div>
+<div class="filter-background row">
+  <div class="col-d-12">
+    <h3 class="filter-header">Filters</h3>
+  </div>
+  <div class="col-d-12 d-flex-label">
+    <label class="label-padding">Launch Year</label>
+  </div>
 
-    <div class="year-btn-container">
-      <div class="col-d-6" *ngFor="let year of years; let index = index">
-        <button
-          [ngStyle]="{ float: index % 2 !== 0 ? 'right' : '' }"
-          class="year-selected"
-          type="button"
-        >
-          {{ year }}
-        </button>
-      </div>
-    </div>
+  <div class="year-btn-container">
+    <div
+      class="col-d-12 d-flex-btn"
+      *ngFor="let year of years; let index = index"
+    >
+      <input id="year{{ year.yearOne }}" type="radio" name="yearRadio" />
+      <label for="year{{ year.yearOne }}">{{ year.yearOne }}</label>
 
-    <div class="col-d-12 year-label-container">
-      <label class="label-success-launch">Successful Launch</label>
+      <input
+        *ngIf="year.yearTwo.length > 0"
+        id="year{{ year.yearTwo }}"
+        type="radio"
+        name="yearRadio"
+      />
+      <label *ngIf="year.yearTwo.length > 0" for="year{{ year.yearTwo }}">
+        {{ year.yearTwo }}</label
+      >
     </div>
+  </div>
 
-    <div class="year-btn-container">
-      <div class="col-d-12">
-        <button class="year-selected" type="button">True</button>
-        <button class="year-selected year-second-btn" type="button">
-          False
-        </button>
-      </div>
-    </div>
+  <div class="col-d-12 d-flex-label">
+    <label class="label-padding-success">Successful Launch</label>
+  </div>
+  <div class="col-d-12 d-flex-btn btn-success-container">
+    <input id="year_launch_true" type="radio" name="successLaunch" />
+    <label for="year_launch_true">True</label>
 
-    <div class="col-d-12 year-label-container">
-      <label class="label-success-launch">Successful Landing</label>
-    </div>
+    <input id="year_launch_false" type="radio" name="successLaunch" />
+    <label for="year_launch_false">False</label>
+  </div>
 
-    <div class="year-btn-container">
-      <div class="col-d-12">
-        <button class="year-selected" type="button">True</button>
-        <button class="year-selected year-second-btn" type="button">
-          False
-        </button>
-      </div>
-    </div>
+  <div class="col-d-12 d-flex-label">
+    <label class="label-padding-success">Successful Landing</label>
+  </div>
+  <div class="col-d-12 d-flex-btn btn-success-container">
+    <input id="year_land_true" type="radio" name="successLand" />
+    <label for="year_land_true">True</label>
+
+    <input id="year_land_false" type="radio" name="successLand" />
+    <label for="year_land_false">False</label>
   </div>
 </div>
