@@ -1,14 +1,14 @@
 <div class="filter-background row">
-  <div class="col-d-12">
+  <div class="col-d-12 col-t-12">
     <h3 class="filter-header">Filters</h3>
   </div>
-  <div class="col-d-12 d-flex-label">
+  <div class="col-d-12 col-t-12 d-flex-label">
     <label class="label-padding">Launch Year</label>
   </div>
 
   <div class="year-btn-container">
     <div
-      class="col-d-12 d-flex-btn"
+      class="col-d-12 col-t-12 d-flex-btn button-year"
       *ngFor="let year of years; let index = index"
     >
       <input id="year{{ year.yearOne }}" type="radio" name="yearRadio" />
@@ -26,10 +26,10 @@
     </div>
   </div>
 
-  <div class="col-d-12 d-flex-label">
+  <div class="col-d-12 col-t-12 d-flex-label">
     <label class="label-padding-success">Successful Launch</label>
   </div>
-  <div class="col-d-12 d-flex-btn btn-success-container">
+  <div class="col-d-12 col-t-12 d-flex-btn btn-success-container button-launch">
     <input id="year_launch_true" type="radio" name="successLaunch" />
     <label for="year_launch_true">True</label>
 
@@ -37,10 +37,10 @@
     <label for="year_launch_false">False</label>
   </div>
 
-  <div class="col-d-12 d-flex-label">
+  <div class="col-d-12 col-t-12 d-flex-label">
     <label class="label-padding-success">Successful Landing</label>
   </div>
-  <div class="col-d-12 d-flex-btn btn-success-container">
+  <div class="col-d-12 col-t-12 d-flex-btn btn-success-container button-land">
     <input id="year_land_true" type="radio" name="successLand" />
     <label for="year_land_true">True</label>
 

@@ -1,7 +1,7 @@
 @import "mixins";
 
 .year-btn-container {
-  padding: 0px rem-calc(10);
+  padding: 0px 5%;
   margin-bottom: 10%;
 }
 
@@ -35,45 +35,44 @@
 }
 
 .btn-success-container {
-  padding: 0 rem-calc(17);
+  padding: 1% 6%;
   margin-bottom: 10%;
 }
 
-input[name="yearRadio"] {
-  display: none;
-}
-input[name="yearRadio"] + label {
-  @include year;
-  background-color: $not-selected-color;
+.year-buttons {
+  @include radioButton ("yearRadio");
 }
 
-input[name="yearRadio"]:checked + label {
-  @include year;
-  background-color: $selected-color;
+.button {
+  &-year {
+    @include radioButton ("yearRadio");
+  }
+  &-launch {
+    @include radioButton ("successLaunch");
+  }
+  &-land {
+    @include radioButton ("successLand");
+  }
 }
 
-input[name="successLaunch"] {
-  display: none;
-}
-input[name="successLaunch"] + label {
-  @include year;
-  background-color: $not-selected-color;
-}
+@media only screen and (min-width: 400px) and  (max-width: 700px) {
+  .label-padding {
+    border-bottom: 1px solid $launch-label-border;
+    padding: 0 30%;
+    &-success {
+      border-bottom: 1px solid $launch-label-border;
+      padding: 0 25%;
+    }
+  }
+} 
 
-input[name="successLaunch"]:checked + label {
-  @include year;
-  background-color: $selected-color;
-}
-
-input[name="successLand"] {
-  display: none;
-}
-input[name="successLand"] + label {
-  @include year;
-  background-color: $not-selected-color;
-}
-
-input[name="successLand"]:checked + label {
-  @include year;
-  background-color: $selected-color;
+@media only screen and (max-width: 400px) {
+  .label-padding {
+    border-bottom: 1px solid $launch-label-border;
+    padding: 0 25%;
+    &-success {
+      border-bottom: 1px solid $launch-label-border;
+      padding: 0 18%;
+    }
+  }
 }

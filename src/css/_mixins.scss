@@ -13,3 +13,18 @@
   padding-right: rem-calc($pad-right);
   padding-left: rem-calc($pad-left);
 }
+
+@mixin radioButton($name) {
+  input[name=#{$name}] {
+    display: none;
+  }
+  input[name=#{$name}] + label {
+    @include year;
+    background-color: $not-selected-color;
+  }
+  
+  input[name=#{$name}]:checked + label {
+    @include year;
+    background-color: $selected-color;
+  }
+}

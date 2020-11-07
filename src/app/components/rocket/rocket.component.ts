@@ -12,6 +12,6 @@ export class RocketComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.launch);
+    //console.log(this.launch);
   }
 }
