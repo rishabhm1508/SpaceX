@@ -7,9 +7,10 @@ import { HomeComponent } from "./components/home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { LaunchFilterComponent } from './components/launch-filter/launch-filter.component';
 import { RocketComponent } from './components/rocket/rocket.component';
+import { SpinnerComponent } from './core/spinner/spinner.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LaunchFilterComponent, RocketComponent],
+  declarations: [AppComponent, HomeComponent, LaunchFilterComponent, RocketComponent, SpinnerComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

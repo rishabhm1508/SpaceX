@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
+import { FilterCriteriaModel } from "src/app/models/filter-criteria.model";
 import { LaunchModel } from "src/app/models/launch.model";
 import { SpaceXService } from "src/app/services/space-x.service";
 
@@ -9,18 +11,27 @@ import { SpaceXService } from "src/app/services/space-x.service";
 })
 export class HomeComponent implements OnInit {
   launches: LaunchModel[];
+  filterSubscription: Subscription;
   constructor(private spaceXService: SpaceXService) {}
 
   ngOnInit() {
-    this.spaceXService.getAllLaunches().subscribe((launches) => {
-      this.launches = launches;
-      launches.forEach((x, index) => {
-        x.rocket.first_stage.cores.forEach( x=>{
-          console.log(x.land_success + " id: " + index);
-        })
+    this.getLaunches(null);
+    this.filterSubscription = this.spaceXService
+      .getFilterCriteria()
+      .subscribe((filterCriteria) => {
+        this.getLaunches(filterCriteria);
       });
-      let nulls = launches.filter((x) => x.rocket.first_stage === undefined);
-      console.log(nulls);
+  }
+
+  getLaunches(filterCriteria: FilterCriteriaModel): void {
+    this.spaceXService.setSpinner(true);
+    this.spaceXService.getLaunches(filterCriteria).subscribe((launches) => {
+      this.launches = launches;
+      this.spaceXService.setSpinner(false);
     });
+  }
+
+  ngOnDestroy() {
+    this.filterSubscription.unsubscribe();
   }
 }

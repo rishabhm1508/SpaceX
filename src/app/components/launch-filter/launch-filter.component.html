@@ -3,7 +3,7 @@
     <h3 class="filter-header">Filters</h3>
   </div>
   <div class="col-d-12 col-t-12 d-flex-label">
-    <label class="label-padding">Launch Year</label>
+    <label class="btn-labels">Launch Year</label>
   </div>
 
   <div class="year-btn-container">
@@ -11,7 +11,13 @@
       class="col-d-12 col-t-12 d-flex-btn button-year"
       *ngFor="let year of years; let index = index"
     >
-      <input id="year{{ year.yearOne }}" type="radio" name="yearRadio" />
+      <input
+        (change)="filterChanged($event.target.value, 'year')"
+        value="{{ year.yearOne }}"
+        id="year{{ year.yearOne }}"
+        type="radio"
+        name="yearRadio"
+      />
       <label for="year{{ year.yearOne }}">{{ year.yearOne }}</label>
 
       <input
@@ -19,6 +25,8 @@
         id="year{{ year.yearTwo }}"
         type="radio"
         name="yearRadio"
+        value="{{ year.yearTwo }}"
+        (change)="filterChanged($event.target.value, 'year')"
       />
       <label *ngIf="year.yearTwo.length > 0" for="year{{ year.yearTwo }}">
         {{ year.yearTwo }}</label
@@ -27,24 +35,58 @@
   </div>
 
   <div class="col-d-12 col-t-12 d-flex-label">
-    <label class="label-padding-success">Successful Launch</label>
+    <label class="btn-labels">Successful Launch</label>
   </div>
   <div class="col-d-12 col-t-12 d-flex-btn btn-success-container button-launch">
-    <input id="year_launch_true" type="radio" name="successLaunch" />
+    <input
+      value="true"
+      (change)="filterChanged($event.target.value, 'launch')"
+      id="year_launch_true"
+      type="radio"
+      name="successLaunch"
+    />
     <label for="year_launch_true">True</label>
 
-    <input id="year_launch_false" type="radio" name="successLaunch" />
+    <input
+      value="false"
+      (change)="filterChanged($event.target.value, 'launch')"
+      id="year_launch_false"
+      type="radio"
+      name="successLaunch"
+    />
     <label for="year_launch_false">False</label>
   </div>
 
   <div class="col-d-12 col-t-12 d-flex-label">
-    <label class="label-padding-success">Successful Landing</label>
+    <label class="btn-labels">Successful Landing</label>
   </div>
   <div class="col-d-12 col-t-12 d-flex-btn btn-success-container button-land">
-    <input id="year_land_true" type="radio" name="successLand" />
+    <input
+      value="true"
+      (change)="filterChanged($event.target.value, 'land')"
+      id="year_land_true"
+      type="radio"
+      name="successLand"
+    />
     <label for="year_land_true">True</label>
 
-    <input id="year_land_false" type="radio" name="successLand" />
+    <input
+      value="false"
+      (change)="filterChanged($event.target.value, 'land')"
+      id="year_land_false"
+      type="radio"
+      name="successLand"
+    />
     <label for="year_land_false">False</label>
+  </div>
+
+  <div class="col-d-12 reset-btn-container col-t-12">
+    <button
+      class="reset-btn reset-btn-padding"
+      type="button"
+      (click)="resetFilter()"
+    >
+      Reset Filter
+    </button>
   </div>
 </div>

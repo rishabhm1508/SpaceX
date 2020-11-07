@@ -28,3 +28,8 @@
     background-color: $selected-color;
   }
 }
+
+@mixin btn-container($padding-x) {
+  padding: 0px #{$padding-x};
+  margin-bottom: 10%;
+}

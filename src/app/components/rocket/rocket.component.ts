@@ -14,4 +14,22 @@ export class RocketComponent implements OnInit {
   ngOnInit() {
     //console.log(this.launch);
   }
+
+  getLandStatus(launch: LaunchModel): string {
+    let status: string;
+    if (
+      launch.rocket.first_stage &&
+      launch.rocket.first_stage.cores &&
+      launch.rocket.first_stage.cores.length > 0
+    ) {
+      launch.rocket.first_stage.cores.forEach((core) => {
+        core.land_success === null
+          ? (status = "Not Known")
+          : core.land_success
+          ? (status = "true")
+          : (status = "false");
+      });
+    }
+    return status;
+  }
 }

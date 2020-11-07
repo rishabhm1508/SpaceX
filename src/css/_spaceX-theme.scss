@@ -29,7 +29,7 @@
 }
 
 /* For tablets: */
-@media only screen and (min-width: 700px) and (max-width: 1023px) {
+@media only screen and (min-width: 700px) and (max-width: 1024px) {
   .col-t-1 {
     width: 8.33%;
   }
@@ -68,7 +68,7 @@
   }
 }
 /* For desktop: */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
   .col-d-1 {
     width: 8.33%;
   }

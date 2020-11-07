@@ -1,8 +1,7 @@
 @import "mixins";
 
 .year-btn-container {
-  padding: 0px 5%;
-  margin-bottom: 10%;
+  @include btn-container(12%);
 }
 
 .d-flex {
@@ -27,52 +26,69 @@
     margin: 0px;
   }
 }
-.label-padding {
-  @include filter-labels(28, 28);
-  &-success {
-    @include filter-labels(12, 12);
-  }
-}
 
 .btn-success-container {
-  padding: 1% 6%;
-  margin-bottom: 10%;
+  @include btn-container(14%);
 }
 
 .year-buttons {
-  @include radioButton ("yearRadio");
+  @include radioButton("yearRadio");
 }
 
 .button {
   &-year {
-    @include radioButton ("yearRadio");
+    @include radioButton("yearRadio");
   }
   &-launch {
-    @include radioButton ("successLaunch");
+    @include radioButton("successLaunch");
   }
   &-land {
-    @include radioButton ("successLand");
+    @include radioButton("successLand");
   }
 }
 
-@media only screen and (min-width: 400px) and  (max-width: 700px) {
-  .label-padding {
-    border-bottom: 1px solid $launch-label-border;
-    padding: 0 30%;
-    &-success {
-      border-bottom: 1px solid $launch-label-border;
-      padding: 0 25%;
-    }
+.btn-labels {
+  border-bottom: 1px solid $launch-label-border;
+  padding: 0 1%;
+  margin-bottom: 1%;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 700px) {
+  .year-btn-container {
+    @include btn-container(30%);
   }
-} 
+
+  .reset-btn-padding {
+    padding: 2% 4% !important;
+  }
+
+  .btn-success-container {
+    @include btn-container(31%);
+  }
+}
 
 @media only screen and (max-width: 400px) {
-  .label-padding {
-    border-bottom: 1px solid $launch-label-border;
-    padding: 0 25%;
-    &-success {
-      border-bottom: 1px solid $launch-label-border;
-      padding: 0 18%;
-    }
+  .btn-success-container {
+    @include btn-container(24%);
+  }
+
+  .year-btn-container {
+    @include btn-container(22%);
+  }
+}
+
+.reset-btn {
+  background-color: $reset-btn;
+  padding: 4%;
+  border: none;
+  border-radius: 8%;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $reset-btn-hover;
+  }
+  &-container {
+    display: flex;
+    justify-content: center;
   }
 }
