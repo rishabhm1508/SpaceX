@@ -24,6 +24,8 @@
   }
   &-header {
     margin: 0px;
+    padding-top: 1%;
+    padding-left: 5%;
   }
 }
 
@@ -58,6 +60,11 @@
     @include btn-container(30%);
   }
 
+  .filter-header {
+    padding-left: 5%;
+    padding-top: 5%;
+  }
+
   .reset-btn-padding {
     padding: 2% 4% !important;
   }
@@ -70,6 +77,11 @@
 @media only screen and (max-width: 400px) {
   .btn-success-container {
     @include btn-container(24%);
+  }
+
+  .filter-header {
+    padding-left: 5%;
+    padding-top: 5%;
   }
 
   .year-btn-container {
