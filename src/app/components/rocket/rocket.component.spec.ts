@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RocketComponent } from './rocket.component';
@@ -8,7 +9,10 @@ describe('RocketComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RocketComponent ]
+      declarations: [ RocketComponent ],
+      imports:[
+        HttpClientModule
+      ]
     })
     .compileComponents();
   }));

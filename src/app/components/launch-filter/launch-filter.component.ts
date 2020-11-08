@@ -10,6 +10,7 @@ import { YEARS } from "src/app/shared/space-x.constant";
 })
 export class LaunchFilterComponent implements OnInit {
   years = YEARS;
+  filterBtns = true;
   filterCriteriaModel: FilterCriteriaModel;
 
   constructor(private spaceXService: SpaceXService) {}
@@ -33,9 +34,13 @@ export class LaunchFilterComponent implements OnInit {
   }
 
   resetFilter(): void {
+    this.filterBtns = false;
     this.filterCriteriaModel.year = "";
     this.filterCriteriaModel.land = "";
     this.filterCriteriaModel.launch = "";
     this.spaceXService.setFilterCriteria(this.filterCriteriaModel);
+    setTimeout(() => {
+      this.filterBtns = true;
+    }, 0);
   }
 }

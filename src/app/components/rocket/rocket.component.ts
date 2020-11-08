@@ -11,13 +11,12 @@ export class RocketComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    //console.log(this.launch);
-  }
+  ngOnInit() {}
 
   getLandStatus(launch: LaunchModel): string {
     let status: string;
     if (
+      launch &&
       launch.rocket.first_stage &&
       launch.rocket.first_stage.cores &&
       launch.rocket.first_stage.cores.length > 0

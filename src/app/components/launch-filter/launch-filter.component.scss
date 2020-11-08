@@ -1,4 +1,4 @@
-@import "mixins";
+@import "src/css/mixins";
 
 .year-btn-container {
   @include btn-container(12%);

@@ -1,5 +1,5 @@
-@import "functions";
-@import "variables";
+@import "src/css/functions";
+@import "src/css/variables";
 
 @mixin year {
   padding: rem-calc(4) rem-calc(12);

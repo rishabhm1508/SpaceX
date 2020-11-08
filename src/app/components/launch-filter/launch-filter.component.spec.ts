@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LaunchFilterComponent } from './launch-filter.component';
@@ -8,7 +9,10 @@ describe('LaunchFilterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LaunchFilterComponent ]
+      declarations: [ LaunchFilterComponent ],
+      imports:[
+        HttpClientModule
+      ],
     })
     .compileComponents();
   }));
