@@ -30,4 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Light House Screen Shot
 
-![Alt text](/src/Light_House.png?raw=true)
+![Alt text](https://github.com/rishabhm1508/SpaceX/blob/master/src/Light_House.PNG?raw=true)
