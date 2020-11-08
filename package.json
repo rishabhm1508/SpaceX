@@ -11,16 +11,16 @@
     "heroku-postbuild": "ng build --prod"
   },
   "engines": {
-    "node":"12.16.1",
-    "npm":"6.13.4"
-  } ,
+    "node": "12.16.1",
+    "npm": "6.13.4"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.1.1",
     "@angular/cli": "~8.1.1",
     "@angular/compiler-cli": "^8.1.3",
     "@angular/common": "~8.1.1",
-    "@angular/compiler": "~8.1.1", 
+    "@angular/compiler": "~8.1.1",
     "@angular/core": "~8.1.1",
     "@angular/forms": "~8.1.1",
     "@angular/platform-browser": "~8.1.1",
