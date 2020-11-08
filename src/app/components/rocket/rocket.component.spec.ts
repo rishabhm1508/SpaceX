@@ -1,20 +1,17 @@
-import { HttpClientModule } from '@angular/common/http';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from "@angular/common/http";
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { RocketComponent } from './rocket.component';
+import { RocketComponent } from "./rocket.component";
 
-describe('RocketComponent', () => {
+describe("RocketComponent", () => {
   let component: RocketComponent;
   let fixture: ComponentFixture<RocketComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RocketComponent ],
-      imports:[
-        HttpClientModule
-      ]
-    })
-    .compileComponents();
+      declarations: [RocketComponent],
+      imports: [HttpClientModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,7 +20,7 @@ describe('RocketComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

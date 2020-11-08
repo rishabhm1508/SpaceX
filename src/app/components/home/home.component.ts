@@ -10,7 +10,7 @@ import { SpaceXService } from "src/app/services/space-x.service";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  launches: LaunchModel[]=[];
+  launches: LaunchModel[] = [];
   filterSubscription: Subscription;
   constructor(private spaceXService: SpaceXService) {}
 

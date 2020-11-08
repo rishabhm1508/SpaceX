@@ -2,9 +2,12 @@
   <div class="rocket-card-content">
     <div class="image-container">
       <figure>
-        <img class="image-details" src="{{ launch?.links.mission_patch }}" alt="Rocket Logo"/>
+        <img
+          class="image-details"
+          src="{{ launch?.links.mission_patch }}"
+          alt="Rocket Logo"
+        />
       </figure>
-
     </div>
     <div class="text-details text-details-name-id">
       <h5 class="rocket-name">
@@ -14,7 +17,9 @@
         <span class="rocket-id-label"> Mission Ids: </span>
         <span class="rocket-id-value">
           <ul *ngIf="launch?.mission_id.length > 0; else noId">
-            <li class="font-medium" *ngFor="let id of launch?.mission_id">{{ id }}</li>
+            <li class="font-medium" *ngFor="let id of launch?.mission_id">
+              {{ id }}
+            </li>
           </ul>
           <ng-template #noId>
             <ul>
@@ -39,7 +44,7 @@
 
     <div class="text-details">
       <label class="rocket-id-label">Successful Landing </label> :
-      <label class="rocket-id-value">{{ getLandStatus( launch) }} </label>
+      <label class="rocket-id-value">{{ getLandStatus(launch) }} </label>
     </div>
   </div>
 </section>
